@@ -3,6 +3,15 @@ from datetime import datetime
 from typing import Optional
 
 
+class UserOut(BaseModel):
+    id: int
+    email: EmailStr
+    created_at: datetime
+
+    class Config:
+        orm_mode = True
+
+
 class PostBase(BaseModel):
     title: str
     content: str
@@ -16,8 +25,10 @@ class PostCreate(PostBase):
 class Post(PostBase):  # inherit the created models no need to specify
     id: int
     created_at: datetime
-
+    owner_id: int
+    owner: UserOut
     # converting sql alchemy model to pydantic model
+
     class Config:
         orm_mode = True
 
@@ -29,15 +40,6 @@ class UserBase(BaseModel):
 
 class UserCreate(UserBase):
     pass
-
-
-class UserOut(BaseModel):
-    id: int
-    email: EmailStr
-    created_at: datetime
-
-    class Config:
-        orm_mode = True
 
 
 class UserLogin(BaseModel):

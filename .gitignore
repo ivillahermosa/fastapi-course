@@ -1,0 +1,4 @@
+# important to ignore this file for clean and secure project structure
+__pycache__
+venv
+*.env
