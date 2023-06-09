@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: testing github actions for CI/CD
-      - run: echo "Learning CI/CD sample!!"
+      - uses: echo "Learning CI/CD sample!!"
 
   # CI/CD pipeline config - deployment
   # job1:
