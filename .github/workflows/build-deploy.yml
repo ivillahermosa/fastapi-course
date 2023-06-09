@@ -1,9 +1,8 @@
 name: Build and Deploy Code
 
-on:
+on: [push, pull_request]
 
 jobs:
-  # testing only
   job1:
     runs-on: ubuntu-latest
     steps:
